@@ -1,0 +1,22 @@
+[project]
+name = "llm-sdk"
+version = "0.1.0"
+description = "sunbot.sdk.llm — llm implementations."
+readme = "README.md"
+authors = [{ email = "hoang.minh.quan@sun-asterisk.com" }]
+requires-python = ">=3.14"
+dependencies = ["llm-core>=0.1,<0.2", "std>=0.1,<0.2"]
+
+[project.optional-dependencies]
+# openai = ["the-sdk>=x.y"]   # add the backend SDK, then guard its import
+
+[build-system]
+requires = ["uv_build>=0.10.3,<0.11.0"]
+build-backend = "uv_build"
+
+[tool.uv.build-backend]
+module-name = ["sunbot.sdk.llm.openai"]
+
+[tool.uv.sources]
+llm-core = { workspace = true }
+std = { workspace = true }

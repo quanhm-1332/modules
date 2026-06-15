@@ -1,0 +1,20 @@
+[project]
+name = "llm-core"
+version = "0.1.0"
+description = "sunbot.core.llm — llm interface."
+readme = "README.md"
+authors = [{ email = "hoang.minh.quan@sun-asterisk.com" }]
+requires-python = ">=3.14"
+dependencies = [
+    "std>=0.1,<0.2",
+]
+
+[build-system]
+requires = ["uv_build>=0.10.3,<0.11.0"]
+build-backend = "uv_build"
+
+[tool.uv.build-backend]
+module-name = "sunbot.core.llm"
+
+[tool.uv.sources]
+std = { workspace = true }
