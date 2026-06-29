@@ -1,3 +1,8 @@
+"""Utilities, Runtime-specific (asyncio event loop, threading/ThreadPool, multiprocessing/ProcessPool) logic
+Low-priority:
+Concurrency control: RateLimit, Semaphore (max_concurrency) -> Logic + Interface + decorator
+"""
+
 import asyncio
 from collections.abc import Callable
 

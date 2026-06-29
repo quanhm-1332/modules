@@ -5,10 +5,21 @@ component reuses, so the platform speaks one error vocabulary.
 """
 
 import traceback
+from dataclasses import dataclass
 
 
+@dataclass
 class PlatformError(Exception):
     """Root of all platform-level (infrastructure) errors."""
+
+    msg: str
+    service: str
+
+
+class WorkerDown(PlatformError): ...
+
+
+class ServiceDown(PlatformError): ...
 
 
 class NetworkError(PlatformError):
@@ -18,6 +29,7 @@ class NetworkError(PlatformError):
         return "".join(traceback.format_exception(type(self), self, self.__traceback__))
 
 
+@dataclass
 class ApplicationError(Exception):
     """Root of business/application errors that map onto an HTTP status.
 
@@ -29,3 +41,6 @@ class ApplicationError(Exception):
 
     def to_http_status_code(self) -> int:
         return self.status_code
+
+
+"""default_exception_handlers: (exc: Exception) -> ()"""
