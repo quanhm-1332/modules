@@ -16,6 +16,3 @@ build-backend = "uv_build"
 
 [tool.uv.build-backend]
 module-name = ["sunbot.core.cache", "sunbot.sdk.cache"]
-
-[tool.uv.sources]
-std = { git = "ssh://git@github.com/quanhm-1332/modules.git", subdirectory = "std", branch = "release/std-v2.0.0" }
