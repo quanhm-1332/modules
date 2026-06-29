@@ -16,3 +16,6 @@ build-backend = "uv_build"
 
 [tool.uv.build-backend]
 module-name = ["sunbot.core.cache", "sunbot.sdk.cache"]
+
+[tool.uv.sources]
+std = { workspace = true }
