@@ -5,9 +5,7 @@ description = "sunbot.std — platform foundation."
 readme = "README.md"
 authors = [{ email = "hoang.minh.quan@sun-asterisk.com" }]
 requires-python = ">=3.14"
-dependencies = [
-    "std",
-]
+dependencies = ["std>=1.0"]
 
 [project.optional-dependencies]
 redis = ["redis[hiredis]>=8.0.0"]
@@ -20,4 +18,4 @@ build-backend = "uv_build"
 module-name = ["sunbot.core.cache", "sunbot.sdk.cache"]
 
 [tool.uv.sources]
-std = { workspace = true }
+std = { git = "ssh://git@github.com/quanhm-1332/modules.git", subdirectory = "std", branch = "release/std-v2.0.0" }
