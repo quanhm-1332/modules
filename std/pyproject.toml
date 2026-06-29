@@ -1,6 +1,6 @@
 [project]
 name = "std"
-version = "0.1.0"
+version = "2.0"
 description = "sunbot.std — platform foundation."
 readme = "README.md"
 authors = [{ email = "hoang.minh.quan@sun-asterisk.com" }]
